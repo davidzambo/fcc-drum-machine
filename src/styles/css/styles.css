@@ -1,0 +1,38 @@
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%; }
+
+.App {
+  background: url("/images/background.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; }
+
+.drum-machine {
+  display: flex;
+  width: 450px;
+  flex-wrap: wrap; }
+
+.sample {
+  box-sizing: border-box;
+  width: 130px;
+  height: 150px;
+  display: block;
+  background-color: darkgray;
+  border: 1px solid black;
+  text-align: center;
+  margin: 10px; }
+  .sample h4 {
+    text-transform: uppercase; }
+
+/*# sourceMappingURL=styles.css.map */

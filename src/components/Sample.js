@@ -7,6 +7,7 @@ export class Sample extends React.Component{
             audio: '',
             isPressed: false
         }
+        this.onClick = this.onClick.bind(this);
     }
 
     componentWillMount(){
@@ -35,11 +36,17 @@ export class Sample extends React.Component{
         })
     }
 
+    onClick(){
+        this.state.audio.play();
+        this.setState({isPressed: true})
+        setTimeout(() => this.setState({isPressed: false}), 100);
+    }
 
     render(){
         return(
-            <div className="sample" onClick={() => this.state.audio.play()}>
-                Ez itt egy {this.props.title} { this.state.isPressed ? 'pressed' : 'not'}
+            <div className="sample" onClick={this.onClick}>
+                <h3>{this.props.title}</h3>
+                <h4>({this.props.trigger})</h4>
             </div>
         );
     }
