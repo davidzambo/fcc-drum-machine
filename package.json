@@ -1,7 +1,9 @@
 {
   "name": "drum-machine",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
+  "homepage" : "https://www.dcmf.hu/freecodecamp/drum-machine/",
+  "author": "davidzambo <david@dcmf.hu>",
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",

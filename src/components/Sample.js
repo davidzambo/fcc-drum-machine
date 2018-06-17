@@ -8,6 +8,7 @@ export class Sample extends React.Component{
             isPressed: false
         }
         this.onClick = this.onClick.bind(this);
+        this.handlePlay = this.handlePlay.bind(this);
     }
 
     componentWillMount(){
@@ -17,15 +18,9 @@ export class Sample extends React.Component{
     }
 
     componentDidMount(){
-        const { audio } = this.state;
         document.addEventListener('keypress', (e) => {
             if (e.key === this.props.trigger || e.key === this.props.trigger.toUpperCase()) {
-                if (audio.paused ){
-                    audio.play();
-                } else {
-                    audio.currentTime = 0;
-                }
-                this.setState({isPressed: true})
+                this.handlePlay();
             }
         });
 
@@ -37,15 +32,26 @@ export class Sample extends React.Component{
     }
 
     onClick(){
-        this.state.audio.play();
-        this.setState({isPressed: true})
+        this.handlePlay();
         setTimeout(() => this.setState({isPressed: false}), 100);
     }
+
+    handlePlay(){
+        const { audio } = this.state;
+
+        if (audio.paused ){
+            audio.play();
+        } else {
+            audio.currentTime = 0;
+        }
+        this.setState({isPressed: true})
+    }
+
 
     render(){
         const style = {
             backgroundColor: this.state.isPressed ? 'rgba(238,238,238,0.8)' : '#eee'
-    }
+        }
 
         return(
             <div className="drum-pad" style={style}  onClick={this.onClick} id={this.props.trigger}>
