@@ -2,6 +2,10 @@
 $font: 'Miriam Libre', sans-serif;
 @import "mediaqueries";
 
+html{
+  touch-action: manipulation;
+}
+
 html,
 body,
 #drum-machine{

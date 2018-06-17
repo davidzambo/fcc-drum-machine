@@ -13,6 +13,9 @@
       .drum-machine .drum-pad img {
         height: 40%;
         width: auto; } }
+html {
+  touch-action: manipulation; }
+
 html,
 body,
 #drum-machine {
